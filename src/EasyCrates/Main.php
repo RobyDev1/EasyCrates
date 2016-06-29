@@ -7,7 +7,7 @@ use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerItemHeldEvent;
 use pocketmine\event\player\PlayerInteractEvent;
-
+use pocketmine\Player;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat as TF;
