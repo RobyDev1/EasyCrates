@@ -20,11 +20,11 @@ class Main extends PluginBase implements Listener {
     }
     
     public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
-        switch($command->getName()){
+        switch(strtolower($command->getName())){
             case "crate":
                 if($sender instanceof Player){
                     if(isset($args[0]){
-                        switch($args[1]){
+                        switch($args[0]){
                             case "open":
                                 $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary";)
                         }
