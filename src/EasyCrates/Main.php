@@ -55,8 +55,8 @@ class Main extends PluginBase implements Listener {
                                         case "legendary":
                                             if($sender->getInventory()->getItemInHand() == 341){
 -                                               $sender->sendMessage(TF::BLUE . "You just opened a Legendary Crate");
--                                               $sender->getInventory()->addItem(276,0,1)
--                                               $sender->getInventory()->addItem(311,0,1)
+-                                               $sender->getInventory()->addItem(276,0,1);
+-                                               $sender->getInventory()->addItem(311,0,1);
                                             } else {
                                                 $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Legendary Crate!");
                                             }
