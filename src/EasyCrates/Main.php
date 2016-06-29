@@ -26,7 +26,6 @@ class Main extends PluginBase implements Listener {
                     $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
                     if(isset($args[1])){
                         switch($args[0]){
-                            return;
                             case "open":
                                 $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary");
                                 break;
