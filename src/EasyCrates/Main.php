@@ -65,13 +65,11 @@ class Main extends PluginBase implements Listener {
                                 }
                                 break;
                             default:
-                                $sender->sendMessage(TF::GREEN . "Usage: /crate open uncommon:common:legendary");
+                            }    $sender->sendMessage(TF::GREEN . "Usage: /crate open uncommon:common:legendary");
                         }
                     }
                 }
                 break;
         }
     }
-}
-
 }
