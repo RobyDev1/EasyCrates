@@ -22,8 +22,13 @@ class Main extends PluginBase implements Listener {
     public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
         switch($command->getName()){
             case "crate":
-                if($sender instanceof Player) {
-                    $sender->sendMessage(TF::AQUA . "Usage: /crate open {uncommon:vote:key}");
+                if($sender instanceof Player){
+                    if(isset($args[0]){
+                        switch($args[0]){
+                            case "open":
+                                $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary";)
+                        }
+                    }
                 }
         }
     }
