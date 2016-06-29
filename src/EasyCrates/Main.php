@@ -29,6 +29,11 @@ class Main extends PluginBase implements Listener {
                             case "open":
                                 $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary");
                                 break;
+                            case "legendary":
+                                if($sender->getInventory()->getItemInHand() == 341);
+                                $sender->sendMessage(TF::BLUE . "You just opened a Legendary Crate");
+                                $sender->getInventory()->addItem() == 313)
+                                break;
                         }
                     }
                 }
