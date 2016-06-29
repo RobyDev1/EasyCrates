@@ -24,7 +24,7 @@ class Main extends PluginBase implements Listener {
             case "crate":
                 if($sender instanceof Player){
                     if(isset($args[0]){
-                        switch($args[0]){
+                        switch($args[1]){
                             case "open":
                                 $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary";)
                         }
