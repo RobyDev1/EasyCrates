@@ -37,8 +37,8 @@ class Main extends PluginBase implements Listener {
                                         case "uncommon":
                                             if($sender->getInventory()->getItemInHand() == 341){
 -                                               $sender->sendMessage(TF::BLUE . "You just opened an Uncommon Crate");
--                                               ///$sender->getInventory()->addItem(id,damage,count)
--                                               ///$sender->getInventory()->addItem(id,damage,count)
+-                                               $sender->getInventory()->addItem(267,0,1);
+-                                               $sender->getInventory()->addItem(301,0,1);
                                             } else {
                                                 $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Uncommon Crate!");
                                             }
@@ -46,8 +46,8 @@ class Main extends PluginBase implements Listener {
                                         case "common":
                                             if($sender->getInventory()->getItemInHand() == 341){
 -                                               $sender->sendMessage(TF::BLUE . "You just opened a Common Crate");
--                                               ///$sender->getInventory()->addItem(id,damage,count)
--                                               ///$sender->getInventory()->addItem(id,damage,count)
+-                                               $sender->getInventory()->addItem(317,0,1);
+-                                               $sender->getInventory()->addItem(49,0,10);
                                             } else {
                                                 $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Common Crate!");
                                             }
@@ -55,8 +55,8 @@ class Main extends PluginBase implements Listener {
                                         case "legendary":
                                             if($sender->getInventory()->getItemInHand() == 341){
 -                                               $sender->sendMessage(TF::BLUE . "You just opened a Legendary Crate");
--                                               ///$sender->getInventory()->addItem(id,damage,count)
--                                               ///$sender->getInventory()->addItem(id,damage,count)
+-                                               $sender->getInventory()->addItem(276,0,1)
+-                                               $sender->getInventory()->addItem(311,0,1)
                                             } else {
                                                 $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Legendary Crate!");
                                             }
@@ -67,7 +67,7 @@ class Main extends PluginBase implements Listener {
                                 }
                                 break;
                             default:
-                                $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
+                                $sender->sendMessage(TF::GREEN . "Usage: /crate open uncommon:common:legendary");
                         }
                     }
                 }
