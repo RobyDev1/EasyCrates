@@ -1,0 +1,7 @@
+name: EasyCrates
+main: EasyCrates\Main
+version: 0.8-Alpha
+author: Syntaxious
+api:
+- 1.13.0
+- 2.0.0
