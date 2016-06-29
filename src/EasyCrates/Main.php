@@ -19,57 +19,53 @@ class Main extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
     }
     
-    public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
-        switch(strtolower($command->getName())){
-            case "crate":
-                if($sender instanceof Player){
-                    if(!isset($args[0])){
-                        $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
-                    } else {
-                        switch($args[0]){
-                            case "open":
-                                if(!isset($args[1])){
-                                    $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
-                                } else {
-                                    switch($args[1]){
-                                        case "uncommon":
-                                            if($sender->getInventory()->getItemInHand() == 341){
--                                               $sender->sendMessage(TF::BLUE . "You just opened an Uncommon Crate");
--                                               $sender->getInventory()->addItem(267,0,1);
--                                               $sender->getInventory()->addItem(301,0,1);
-                                            } else {
-                                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Uncommon Crate!");
-                                            }
-                                            break;
-                                        case "common":
-                                            if($sender->getInventory()->getItemInHand() == 341){
--                                               $sender->sendMessage(TF::BLUE . "You just opened a Common Crate");
--                                               $sender->getInventory()->addItem(317,0,1);
--                                               $sender->getInventory()->addItem(49,0,10);
-                                            } else {
-                                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Common Crate!");
-                                            }
-                                            break;
-                                        case "legendary":
-                                            if($sender->getInventory()->getItemInHand() == 341){
--                                               $sender->sendMessage(TF::BLUE . "You just opened a Legendary Crate");
--                                               $sender->getInventory()->addItem(276,0,1);
--                                               $sender->getInventory()->addItem(311,0,1);
-                                            } else {
-                                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Legendary Crate!");
-                                            }
-                                            break;
-                                        default:
-                                            $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary");
-                                    }
+  public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+        if($cmd->getName() == "crate"){
+            if($sender instanceof Player){
+                if(count($args) == 2){
+                    if($args[0] == "open"){
+                        if($args[1] == "uncommon"){
+                            if($sender->getInventory()->getItemInHand()->getId() == 341){
+                               $sender->sendMessage(TF::BLUE . "You just opened an Uncommon Crate");
+                               $sender->getInventory()->addItem(Item::get(267,0,1));
+                               $sender->getInventory()->addItem(Item::get(301,0,1));
+                               } 
+                               else {
+                                    $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Uncommon Crate!");
                                 }
-                                break;
-                            default:
-                                $sender->sendMessage(TF::GREEN . "Usage: /crate open uncommon:common:legendary");
+                        }
+                        if($cmd->getName() == "common"){
+                            if($sender->getInventory()->getItemInHand()->getId() == 341){
+                               $sender->sendMessage(TF::BLUE . "You just opened a Common Crate");
+                               $sender->getInventory()->addItem(Item::get(317,0,1));
+                               $sender->getInventory()->addItem(Item::get(49,0,1));
+                               } 
+                               else {
+                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Common Crate!");
+                               }
+                        }
+                        if($cmd->getName() == "legendary"){
+                            if($sender->getInventory()->getItemInHand()->getId() == 341){
+                               $sender->sendMessage(TF::BLUE . "You just opened a Legendary Crate");
+                                $sender->getInventory()->addItem(Item::get(276,0,1));
+                                $sender->getInventory()->addItem(Item::get(311,0,1));
+                                }
+                                else {
+                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Legendary Crate!");
+                                }
                         }
                     }
+                    else{
+                        $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
+                    }
                 }
-            }   break;
+                else{
+                    $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
+                }
+            }
+            else{
+                $sender->sendMessage("Run command in game!");
+            }
         }
     }
 }
