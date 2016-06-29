@@ -30,6 +30,7 @@ class Main extends PluginBase implements Listener {
                             break;
                             case "open":
                                 $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary");
+                                break;
                         }
                     }
                 }
