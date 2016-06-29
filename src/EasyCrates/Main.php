@@ -7,7 +7,7 @@ use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerItemHeldEvent;
 use pocketmine\event\player\PlayerInteractEvent;
-use pocketmine\Player;
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat as TF;
@@ -23,20 +23,38 @@ class Main extends PluginBase implements Listener {
         switch(strtolower($command->getName())){
             case "crate":
                 if($sender instanceof Player){
-                    $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
-                    if(isset($args[1])){
+                    $sender->sendMessage("Run command in game!");
+                } else {
+                    if(!isset($args[0])){
+                        $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
+                    } else {
                         switch($args[0]){
                             case "open":
-                                $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary");
+                                if(!isset($args[1])){
+                                    $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
+                                } else {
+                                    switch($args[1]){
+                                        case "uncommon":
+                                            //Do something here
+                                            break;
+                                        case "common":
+                                            //Do something here
+                                            break;
+                                        case "legendary":
+                                            //Do something here
+                                            break;
+                                        default:
+                                            $sender->sendMessage(TF::RED . "Usage: /crate open uncommon:common:legendary");
+                                    }
+                                }
                                 break;
-                            case "legendary":
-                                if($sender->getInventory()->getItemInHand() == 341);
-                                $sender->sendMessage(TF::BLUE . "You just opened a Legendary Crate");
-                                $sender->getInventory()->addItem() == 313)
-                                break;
+                            default:
+                                $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
                         }
                     }
                 }
+                break;
         }
     }
 }
+
