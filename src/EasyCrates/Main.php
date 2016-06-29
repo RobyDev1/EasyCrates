@@ -23,6 +23,8 @@ class Main extends PluginBase implements Listener {
         switch(strtolower($command->getName())){
             case "crate":
                 if($sender instanceof Player){
+                    $sender->sendMessage("Run command in game!");
+ -                } else {
                     if(!isset($args[0])){
                         $sender->sendMessage("Usage: /crate open uncommon:common:legendary");
                     } else {
