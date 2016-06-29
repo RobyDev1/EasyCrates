@@ -4,7 +4,7 @@ namespace EasyCrates;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-
+use pocketmine\Player;
 use pocketmine\event\player\PlayerItemHeldEvent;
 use pocketmine\event\player\PlayerInteractEvent;
 
@@ -49,7 +49,7 @@ class Main extends PluginBase implements Listener {
 -                                               ///$sender->getInventory()->addItem(id,damage,count)
 -                                               ///$sender->getInventory()->addItem(id,damage,count)
                                             } else {
-                                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Uncommon Crate!");
+                                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Common Crate!");
                                             }
                                             break;
                                         case "legendary":
@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener {
 -                                               ///$sender->getInventory()->addItem(id,damage,count)
 -                                               ///$sender->getInventory()->addItem(id,damage,count)
                                             } else {
-                                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Uncommon Crate!");
+                                                $sender->sendMessage(TF::RED . "The crate key must be in your hand to open this Legendary Crate!");
                                             }
                                             break;
                                         default:
