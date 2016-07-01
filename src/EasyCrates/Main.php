@@ -15,7 +15,7 @@ use pocketmine\utils\TextFormat as TF;
 class Main extends PluginBase implements Listener {
     
     public function onEnable() {
-        $this->getLogger()->info(TF::BLUE . "[EasyCrates] Enabled");
+        $this->getLogger()->info(TF::BLUE . "§8[§5EP§7Crates§8]§a Enabled");
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
     }
     
@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener {
                                             }
                                             break;
                                         case "common":
-                                            if($sender->getInventory()->getItemInHand() == 341){
+                                            if($sender->getInventory()->getItemInHand() == 131){
 -                                               $sender->sendMessage(TF::BLUE . "You just opened a Common Crate");
 -                                               $sender->getInventory()->addItem(317,0,1);
 -                                               $sender->getInventory()->addItem(49,0,10);
@@ -51,7 +51,7 @@ class Main extends PluginBase implements Listener {
                                             }
                                             break;
                                         case "legendary":
-                                            if($sender->getInventory()->getItemInHand() == 341){
+                                            if($sender->getInventory()->getItemInHand() == 405){
 -                                               $sender->sendMessage(TF::BLUE . "You just opened a Legendary Crate");
 -                                               $sender->getInventory()->addItem(276,0,1);
 -                                               $sender->getInventory()->addItem(311,0,1);
