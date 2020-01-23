@@ -4,7 +4,7 @@ version: 0.8-Alpha
 author: Syntaxious
 api:
 - 1.13.0
-- 2.0.0
+- 3.0.0
 commands:
   crate:
     description: Type /crate for more info
